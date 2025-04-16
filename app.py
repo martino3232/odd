@@ -33,11 +33,11 @@ def stream():
         cp = params.get('cp')
         localidad = params.get('localidad')
         
-        cmd = ['python', os.path.join(SCRIPT_DIR, 'zeuz.py')]
+        cmd = ['python', os.path.join(SCRIPT_DIR, 'Zeuz.py')]
         env = os.environ.copy()
         env['PYTHONUNBUFFERED'] = '1'
 
-        # Simulamos entradas para zeuz.py
+        # Simulamos entradas para Zeuz.py
         if opcion == '1':
             simulated_input = f"1\n{cp}\n"
         elif opcion == '2':
