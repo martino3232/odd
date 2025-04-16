@@ -7,7 +7,10 @@ import time
 import threading
 
 app = Flask(__name__)
-SCRIPT_DIR = os.path.join(os.path.dirname(__file__), 'OjoDeDiosD')
+SCRIPT_DIR = os.path.dirname(__file__)
+script_path = os.path.join(SCRIPT_DIR, 'zeuz.py')
+cmd = ['python', script_path]
+
 
 params = {}  # Variables globales temporales para compartir datos entre rutas
 
