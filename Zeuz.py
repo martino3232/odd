@@ -6,13 +6,11 @@ import time
 import os
 
 def obtener_localidad_desde_cp(cp):
-    """Consulta codigo-postal.ar con el CP y devuelve la localidad."""
     url_busqueda = "https://codigo-postal.ar/search"
     headers = {"User-Agent": "Mozilla/5.0"}
 
     try:
         response = requests.post(url_busqueda, data={"search": cp}, headers=headers, timeout=10)
-
         if response.status_code != 200:
             return None
 
@@ -21,7 +19,7 @@ def obtener_localidad_desde_cp(cp):
         if resultado:
             texto = resultado.text.strip()
             if " - " in texto:
-                return texto.split(" - ")[1].title()  # Devuelve "Adrogue"
+                return texto.split(" - ")[1].title()
         return None
 
     except Exception as e:
@@ -30,14 +28,13 @@ def obtener_localidad_desde_cp(cp):
 
 
 def ejecutar_script(script, *args):
-    """Ejecuta un script pasándole argumentos opcionales."""
+    """Ejecuta un script desde la carpeta actual."""
     script_path = os.path.join(os.path.dirname(__file__), script)
     subprocess.run(["python", script_path, *args], check=True)
 
 
-
 if __name__ == "__main__":
-    multiprocessing.freeze_support()  #  NECESARIO EN WINDOWS 
+    multiprocessing.freeze_support()
 
     print("""
     =============================================
