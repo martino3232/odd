@@ -8,7 +8,7 @@ import threading
 
 app = Flask(__name__)
 SCRIPT_DIR = os.path.dirname(__file__)
-script_path = os.path.join(SCRIPT_DIR, 'zeuz.py')
+script_path = os.path.join(SCRIPT_DIR, 'Zeuz.py')
 cmd = ['python', script_path]
 
 
